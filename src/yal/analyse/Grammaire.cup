@@ -5,9 +5,8 @@ import yal.arbre.* ;
 import yal.arbre.expressions.* ;
 import yal.arbre.instructions.* ;
 import yal.exceptions.AnalyseSyntaxiqueException;
-import yal.table.EntreeVar;
-import yal.table.SymboleEntier;
-import yal.table.Tds;
+import yal.table.*;
+
 import java_cup.runtime.*;
 
 action code {:
@@ -84,8 +83,8 @@ DECAL_LIST ::= DECAL_VAR DECAL_LIST  |DECAL_VAR;
 
 
 DECAL_VAR ::= ENTIER IDF:idf POINTVIRGULE
-                {: Tds.getInstance().ajouter(new Entree(idf),
-                new Symbole());  :};
+                {: Tds.getInstance().ajouter(new EntreeVar(idf),
+                new SymboleEntier());  :};
 LINST   ::=     LINST:li  INST:i
                 {: ((BlocDInstructions)li).ajouter(i) ;
                    RESULT = li ; :}
