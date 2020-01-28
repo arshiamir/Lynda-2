@@ -28,7 +28,7 @@ public class Yal {
             //System.out.println(arbre.toMIPS());
             //stringMIPS.concat(arbre.toMIPS());
             stringMIPS=stringMIPS+"\n"+arbre.toMIPS();
-            System.out.println(stringMIPS);
+            //System.out.println(stringMIPS);
             flot.println(stringMIPS);
             flot.close() ;
         }
