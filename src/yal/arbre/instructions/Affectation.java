@@ -23,8 +23,11 @@ public class Affectation extends Instruction{
 
     @Override
     public String toMIPS() {
-        this.var.getSymbole().setDecal(-4);
-        String mips="sw $v0,"+var.getSymbole().getDecal()+"($sp)";
+        //this.var.getSymbole().setDecal(-4);
+
+        String mips="\n#affectation\n";
+        mips += exp.toMIPS();
+        mips = mips+"sw $v0,"+var.getSymbole().getDecal()+"($sp)";
         return mips;
     }
 }

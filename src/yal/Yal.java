@@ -8,6 +8,7 @@ import yal.analyse.AnalyseurLexical;
 import yal.analyse.AnalyseurSyntaxique;
 import yal.arbre.ArbreAbstrait;
 import yal.exceptions.AnalyseException;
+import yal.table.Tds;
 
 public class Yal {
     
@@ -21,7 +22,9 @@ public class Yal {
 
             String nomSortie = nomFichier.replaceAll("[.]yal", ".mips") ;
             PrintWriter flot = new PrintWriter(new BufferedWriter(new FileWriter(nomSortie))) ;
-            String stringMIPS = ".text\nmain:";
+            String stringMIPS = ".text\nmain:\n#reservation d'espace\naddi $sp, $sp,";
+            stringMIPS= stringMIPS+Tds.getInstance().getTailleZoneVariable()+"\n";
+
             //System.out.println(arbre.toMIPS());
             //stringMIPS.concat(arbre.toMIPS());
             stringMIPS=stringMIPS+"\n"+arbre.toMIPS();

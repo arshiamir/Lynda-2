@@ -21,6 +21,7 @@ public class Tds {
         return  instance;
     }
     public void ajouter(EntreeVar e,SymboleEntier s) throws DoubleDeclarationException {
+        s.setDecal(taille);
         table.put(e,s);
         taille=taille-4;
     }

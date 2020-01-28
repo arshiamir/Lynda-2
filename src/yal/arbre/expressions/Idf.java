@@ -23,7 +23,7 @@ public class Idf extends Expression {
         symbole.setDecal(-4);
         System.out.println(symbole.getDecal());
         int indice=symbole.getDecal();
-        String tomips="tlw $v0,"+indice+"($sp)\n";
+        String tomips="\tlw $v0,"+indice+"($sp)\n";
         return tomips;
     }
     public Symbole getSymbole(){
